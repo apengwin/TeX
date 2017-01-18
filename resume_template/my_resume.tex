@@ -1,0 +1,135 @@
+%f LaTeX resume using res.cls
+\documentclass[line,mm]{res} 
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+%\addtolength{\topmargin}{-.375in}
+\usepackage[top=0.55in, left =0.50in, right= 1.85in,bottom=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage[inline]{enumitem}   
+\makeatletter
+% This command ignores the optional argument for itemize and enumerate lists
+\newcommand{\inlineitem}[1][]{%
+\ifnum\enit@type=\tw@
+    {\descriptionlabel{#1}}
+  \hspace{\labelsep}%
+\else
+  \ifnum\enit@type=\z@
+       \refstepcounter{\@listctr}\fi
+    \quad\@itemlabel\hspace{\labelsep}%
+\fi}
+%\makeatother
+\begin{document}
+\vspace{-5pt}
+\name{\Huge  Allan Peng}
+% \address used twice to have two lines of address
+\address{2520 Hillegass Ave, \#107, Berkeley, CA}
+\address{(909)\,348\,3232 allan.p@berkeley.edu}
+ 
+\begin{resume}
+ 
+    \section{WHERE I STUDY} University of California, Berkeley \hfill  Graduated Dec. 2016 \\
+    % \sl will be bold italic in New Century Schoolbook (or
+	        % any postscript font) and just slanted in
+		% Computer Modern (default) font
+    {\sl BA,} Applied Mathematics, Computer Science GPA: 3.47 \hfill 
+    
+    \section{WHERE I'VE WORKED}
+    
+    {\sc Facebook:} Engineering Intern, Internet.org Scalability Team \hfill {\sl Fall 2015}
+    \begin{itemize} \itemsep -2pt
+    \item Worked on iorg traffic monitor, a central debugging tool for Android engineers on iorg team
+    \item Implemented functionality for engineers to dogfood Facebook products (FBLite, Free Basics, Native Facebook) using phone connections through carriers from different countries
+    \end{itemize}
+    {\sc LinkedIn:} Engineering Intern, Secure-Infrastructure Team \hfill {\sl Summer 2015}
+    \begin{itemize} \itemsep -2pt
+    \item Worked on certificate authority service and command-line tools performing SSL certificate generation, validation, and tracking
+    \item Used by engineers to validate identity while debugging services over an HTTPS network.
+    \end{itemize}
+    {\sc UC Berkeley:} Photography Principles Decal Instructor \hfill {\sl Spring 2016-Fall 2016}
+    \begin{itemize} \itemsep -2pt
+    \item Give weekly lectures on artistic styles, camera operation, and editing tools.
+    \item Lead critique sessions, and give constructive feedback on student work.
+    \item Work with co-instructors to organize lesson plans for a class of 30 beginning photographers
+    \end{itemize}
+\iffalse
+    {\sc UC Berkeley:} CS 70, Math 54 Reader  \hfill {\sl Summer 2013 - Fall 2014}
+    \begin{itemize} \itemsep -2pt
+    \item Graded exams and problem sets for classes in Discrete Math and Linear Algebra.
+    \item Prepared worksheets and led a review session before finals
+%    \item Taught students how to effectively use \LaTeX, saving graders from the agony of bad handwriting.
+    \end{itemize}
+   \fi 
+    \section{THINGS I'VE WORKED ON}
+     {\sc Network Firewall}  \hfill{[Python]}
+	\begin{itemize} \itemsep -2pt
+	\item Developed a stateful packet filter, with both whitelist and blacklist filtering for a Linux VM
+	\item Supports IP blocking, building DNS DENY \& TCP RST packets, and logging HTTP transactions
+	\end{itemize}
+      \iffalse
+    {\sc CloudRank} \hfill{[Python, NumPy]}
+        \begin{itemize} \itemsep -2pt
+        \item Allows Soundcloud users to find out who the most reputable tastemakers in their networks are.
+        \item Discovers and ranks popular profiles in a user's Soundcloud follower network using PageRank
+        \item Discovers a user's local network with Breadth First Search and spectral graph methods.
+     \end{itemize}
+\fi
+\iftrue
+    {\sc Voice Controlled Guitar Robot} \hfill{[Python, Raspberry Pi]}
+    \begin{itemize}\itemsep -2pt
+    \item Programmed embedded system that plays a six-stringed guitar, controlled by human voice.
+    \item Uses Google Speech API for voice control, and RPI GPIO pins to actuate solenoids on frets.
+    \end{itemize}
+\fi
+    {\sc Twenty-Four:} \textit{fourfactorial.herokuapp.com} \hfill{[Node.js, HTML, Javascript]}
+        \begin{itemize} \itemsep -2pt
+        \item Web-app based on the classic game where a player must make 24 using 4 given integers
+        \item Game presents solvable sets in shuffled order, keeps track of fastest time and longest streak.
+        \end{itemize}
+    {\sc Markov Chain Monte Carlo Without Tears:} \hfill{[\LaTeX]}
+        \begin{itemize} \itemsep -2pt
+        \item Lecture-quality notes on MCMC methods, from basic theory to advanced algorithms
+        \item Overview of state-of-the-art research on using MCMC methods to efficiently approximate solutions to \#P problems in sub-exponential time
+        \end{itemize}
+\iffalse
+    {\sc I Want to Love You But I Don't Know If I Can: A Defense of Coldplay}
+        \begin{itemize} \itemsep -2pt
+        \item Extensively researched critique of modern music commentary, from national magazines to vlogs
+        \item A plea for why it should be okay to like Coldplay
+        \end{itemize}
+\fi
+\iftrue
+    \section{GROUPS I WORK WITH}
+    {\sc Innovative Design} \hfill{[VP of External Relations, VP of Internal Relations]}
+        \begin{itemize} \itemsep -2pt
+        \item Organized \& hosted CMYK 2015, a day-long designathon attended by over 100 Berkeley students and judged by industry professionals from Priime, Dropbox, Facebook, Khan Academy
+        \item Planned \& organized socials and weekend retreat  attended by over 80 club members
+        \end{itemize}
+\fi
+    \section{CLASSES I'VE TAKEN}
+    \vspace{-3pt}
+    \begin{multicols}{2}    
+    \begin{itemize}[itemsep=-1pt]
+    \item Graduate Algorithms  
+    \item Graduate Computational Geometry
+    \item Complex Analysis
+%    \item Real Analysis
+    \item Network Architecture
+    \item Abstract Algebra
+    \item AI \& Machine Learning
+%    \item The Hand-Printed Book
+    \item Operating Systems
+    \item Computer Architecture
+    \item Linear Algebra
+    \item Probability Theory 
+%    \item NBC Thursday: Comedy Night Done Right 
+    \item Embedded Systems
+    \item Cyberlaw (London School of Economics)
+%    \item $19^{th}$-century European History
+    \end{itemize}
+    \end{multicols}
+   \vspace{-23pt} 
+	\section{THINGS I'M GOOD WITH} Languages: Python, Java, SQL, C, html, php, Music-Theory, Chinese
+	\\* Software: \LaTeX, Unix(git, Hg, bash), Flask, NumPy, Super Smash Bros. Melee
+	\\* Other: Hand-printing books with Albion Press, Knowledge of Pop Culture,  Gift-giving
+\end{resume}
+\end{document}
