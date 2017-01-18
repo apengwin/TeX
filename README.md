@@ -1,1 +1,3 @@
-some good LaTeX templates.
+# Some good LaTeX templates.
+
+You can compile on teh command line with `pdflatex`
